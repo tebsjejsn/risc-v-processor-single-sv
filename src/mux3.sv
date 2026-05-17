@@ -1,4 +1,5 @@
-module mux3 #(
+module mux3 
+#(
     parameter width=8
 ) (
     input logic [width-1:0] d0, d1, d2,
