@@ -1,0 +1,8 @@
+# ModelSim files
+*.mpf
+*.cr.mti
+*.ini
+work/
+transcript
+vsim.wlf
+*.wlf
