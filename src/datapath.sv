@@ -21,9 +21,6 @@ module datapath(
     logic [31:0] SrcA;
     logic [31:0] SrcB;
     logic [31:0] Result;
-    logic [31:0] aluresult;
-    logic [31:0] writedata;
-    logic [31:0] pc;
 
     mux3 #(.width(32)) pcmux (
         .d0(PCPlus4), 
@@ -40,7 +37,7 @@ module datapath(
     );
     adder pc4add (
         .a(PC), 
-        .b(8'd00000004), 
+        .b(32'd4), 
         .y(PCPlus4)
     );
     regfile rf (
@@ -50,7 +47,7 @@ module datapath(
         .a3(instr[11:7]), 
         .wd3(Result),
         .we3(RegWrite), 
-        .rd1(ScrA), 
+        .rd1(SrcA), 
         .rd2(WriteData)
     );
     mux2 #(.width(32)) alumux (
